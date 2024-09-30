@@ -1,6 +1,6 @@
 package methodOverriding;
 
-public class Dog {
+public class Dog extends Animal {
 	protected void sound() {
 		System.out.println("The dog barks");
 	}

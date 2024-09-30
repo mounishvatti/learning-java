@@ -11,6 +11,12 @@ public class MethodOverriding {
 		
 		Animal a = new Animal();
 		a.sound();
+		
+		Animal d1 = new Dog();
+		Animal c1 = new Cat();
+		
+		d1.sound();
+		c1.sound();
 	}
 	
 }

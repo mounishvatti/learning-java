@@ -21,6 +21,7 @@ public class MethodOverloading {
 	 * If you want to print the values, you should loop through the array or use Arrays.toString().
 	 */
 	
+	// case - 1 
 	protected void m1(float x) {
 		System.out.print("float-arg - ");
 		System.out.println(x);
@@ -36,6 +37,21 @@ public class MethodOverloading {
 		System.out.println(x);
 	}
 	
+	protected void m1(float x, int a) {
+		System.out.print("float & int-arg - ");
+		System.out.println(x+", "+a);
+	}
+	
+	protected void m1(int x, float a) {
+		System.out.print("Int & float-arg - ");
+		System.out.println(x+", "+a);
+	}
+	
+	protected void m2(Object O) {
+		System.out.print("Object-arg - ");
+		System.out.println(O);
+	}
+	
 	protected void m2(String s1) {
 		System.out.print("String-arg - ");
 		System.out.println(s1);
@@ -49,12 +65,16 @@ public class MethodOverloading {
 	public static void main(String[] args) {
 		MethodOverloading m = new MethodOverloading();
 		m.m1(10);
-		m.m1(10, 12);
+		m.m1(10, 12, 13);
+		// m.m1(1,2); // is ambiguous because This would still call the (int, float) or (float, int) methods due to automatic promotion.
+		m.m1(new int[] {1,2}); // this will forcefully invoke the var-arg method 
 		m.m1(10.5f);
 		m.m1(10.5d);
 		m.m1(10l);
 		m.m1('a'); // automatic promotion in overloading
-		
+		m.m2(new Object());
+		m.m1(1,1.0f);
+		m.m1(1.0f,1);
 		// case - 2
 		
 		m.m2("Mounish");

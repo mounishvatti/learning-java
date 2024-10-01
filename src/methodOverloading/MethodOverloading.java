@@ -62,6 +62,15 @@ public class MethodOverloading {
 		System.out.println(s1);
 	}
 	
+	protected int method1(int a) { // in method overloading the return type can be different unlike method overriding
+		return a;
+	}
+	
+	protected double method1(double x) {
+		return x;
+	}
+	
+	
 	public static void main(String[] args) {
 		MethodOverloading m = new MethodOverloading();
 		m.m1(10);

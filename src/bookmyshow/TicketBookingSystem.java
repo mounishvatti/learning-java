@@ -38,11 +38,11 @@ class Seat {
 
     // Method to check if the seat is reserved
     public boolean isReserved() {
-        return reserved;
+        return this.reserved;
     }
 
     public int getSeatNumber() {
-        return seatNumber;
+        return this.seatNumber;
     }
 }
 
